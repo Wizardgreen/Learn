@@ -1,10 +1,16 @@
 import faker from "faker";
 
-export default class User {
+export class User {
   name: string;
   loaction: {
     lat: number;
     lng: number;
   };
-  constructor() {}
+  constructor() {
+    this.name = faker.name.firstName();
+    this.loaction = {
+      lat: parseFloat(faker.address.latitude()),
+      lng: parseFloat(faker.address.longitude())
+    };
+  }
 }
