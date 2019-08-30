@@ -14,30 +14,28 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Sorter_1 = require("./Sorter");
-var CharactersCollection = /** @class */ (function (_super) {
-    __extends(CharactersCollection, _super);
-    function CharactersCollection(data) {
+var NumbersCollection = /** @class */ (function (_super) {
+    __extends(NumbersCollection, _super);
+    function NumbersCollection(data) {
         var _this = _super.call(this) || this;
         _this.data = data;
         return _this;
     }
-    Object.defineProperty(CharactersCollection.prototype, "length", {
+    Object.defineProperty(NumbersCollection.prototype, "length", {
         get: function () {
             return this.data.length;
         },
         enumerable: true,
         configurable: true
     });
-    CharactersCollection.prototype.compare = function (leftIndex, rightIndex) {
-        return (this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase());
+    NumbersCollection.prototype.compare = function (leftIndex, rightIndex) {
+        return this.data[leftIndex] > this.data[rightIndex];
     };
-    CharactersCollection.prototype.swap = function (leftIndex, rightIndex) {
-        var tempArray = this.data.split("");
-        var leftHand = tempArray[leftIndex];
-        tempArray[leftIndex] = tempArray[rightIndex];
-        tempArray[rightIndex] = leftHand;
-        this.data = tempArray.join("");
+    NumbersCollection.prototype.swap = function (leftIndex, rightIndex) {
+        var leftHand = this.data[leftIndex];
+        this.data[leftIndex] = this.data[rightIndex];
+        this.data[rightIndex] = leftHand;
     };
-    return CharactersCollection;
+    return NumbersCollection;
 }(Sorter_1.Sorter));
-exports.CharactersCollection = CharactersCollection;
+exports.NumbersCollection = NumbersCollection;
