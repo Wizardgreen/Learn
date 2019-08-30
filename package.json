@@ -1,6 +1,12 @@
 {
   "devDependencies": {
+    "concurrently": "^4.1.2",
     "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "sorter:build": "cd sorter/ && tsc -w",
+    "sorter:run": "nodemon sorter/build/index.js",
+    "sorter": "concurrently npm:sorter:*"
   },
   "dependencies": {
     "@types/faker": "^4.1.5",
