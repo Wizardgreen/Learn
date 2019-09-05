@@ -9,7 +9,8 @@
     "sorter": "concurrently npm:sorter:*",
     "stats:build": "cd stats/ && tsc -w",
     "stats:run": "nodemon stats/build/index.js",
-    "stats": "concurrently npm:stats:*"
+    "stats": "concurrently npm:stats:*",
+    "web": "cd web-framework/ && parcel index.html"
   },
   "dependencies": {
     "@types/faker": "^4.1.5",
