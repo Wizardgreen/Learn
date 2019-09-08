@@ -1,11 +1,13 @@
 import { User } from "./models/User";
 
-const user = new User({ id: 1, name: "isGreene" });
+const user = User.buildUser({ id: 1 });
 
-user.on("change", () => {
+user.on("change", (): void => {
+  console.log("trigger change!");
   console.log(user);
 });
 
 user.on("save", () => {
+  console.log("trigger save!");
   console.log(user);
 });
