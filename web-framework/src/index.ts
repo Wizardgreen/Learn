@@ -1,13 +1,6 @@
 import { User } from "./models/User";
 
-const user = User.buildUser({ id: 1 });
+const collection = User.buildUserCollection();
+collection.on("change", () => console.log(collection));
 
-user.on("change", (): void => {
-  console.log("trigger change!");
-  console.log(user);
-});
-
-user.on("save", () => {
-  console.log("trigger save!");
-  console.log(user);
-});
+collection.fetch();
