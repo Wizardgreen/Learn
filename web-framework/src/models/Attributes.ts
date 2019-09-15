@@ -10,10 +10,6 @@ export class Attributes<T> {
   }
 
   set(update: T): void {
-    console.log("original data");
-    console.log(this.data);
-    console.log("update data");
-    console.log(update);
     this.data = Object.assign(this.data, update);
   }
 }
