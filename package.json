@@ -12,7 +12,10 @@
     "stats": "concurrently npm:stats:*",
     "web:db": "npx json-server web-framework/db.json --watch",
     "web:run": "cd web-framework/ && parcel index.html",
-    "web": "concurrently npm:web:*"
+    "web": "concurrently npm:web:*",
+    "server:build": "cd server/ && tsc -w",
+    "server:run": "nodemon server/build/index.js",
+    "server": "concurrently npm:server:*"
   },
   "dependencies": {
     "@types/faker": "^4.1.5",
